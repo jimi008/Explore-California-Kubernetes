@@ -3,7 +3,7 @@
 .PHONY: run_website install_kind install_kubectl create_kind_cluster \
 	create_docker_registry connect_registry_to_kind_network \
 	connect_registry_to_kind create_kind_cluster_with_registry \
-  install_ingress_controller
+  install_ingress_controller install_app
 
 run_website:
 	docker build -t explorecalifornia.com . && \
@@ -41,4 +41,7 @@ install_ingress_controller:
   --for=condition=ready pod \
   --selector=app.kubernetes.io/component=controller \
   --timeout=90s
+
+install_app:
+	helm upgrade --atomic --install explorecalifornia.com ./chart
 
