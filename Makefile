@@ -1,4 +1,5 @@
 #!/usr/bin/env make
+.PHONY: run_website
 
 run_website:
 	docker build -t explorecalifornia.com . && \
