@@ -4,4 +4,3 @@ imagePullSecretName: explore-california
 serviceName: explorecalifornia-svcs
 serviceAddress: explorecalifornia.com
 servicePort: 8080
-replicas: 1
