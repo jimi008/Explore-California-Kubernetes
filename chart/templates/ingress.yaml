@@ -5,15 +5,15 @@ metadata:
   name: {{ .Values.appName }}
   annotations:
     kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
   rules:
   - http:
       paths:
       - backend:
           service:
-            name: {{ .Values.serviceName }}
+            name: explorecalifornia-svc
             port:
               number: {{ .Values.servicePort }}
         path: /
